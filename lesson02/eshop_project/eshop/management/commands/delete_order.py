@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand, CommandParser
 from eshop.models import Order
 
 class Command(BaseCommand):
-    help = "Delete a order by ID"
+    help = "Delete an order by ID"
 
     def add_arguments(self, parser: CommandParser) -> None:
         parser.add_argument('pk', type=int, help='Order ID')

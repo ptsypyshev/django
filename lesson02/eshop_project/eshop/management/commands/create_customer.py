@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand, CommandParser
 from eshop.models import Customer
 
 class Command(BaseCommand):
-    help = "Creates new product"
+    help = "Creates new customer"
 
     def add_arguments(self, parser: CommandParser) -> None:
         parser.add_argument('name', type=str, help='Customer name')
