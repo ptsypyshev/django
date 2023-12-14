@@ -1,0 +1,25 @@
+{% extends 'eshop/base.html' %}
+
+{% block title %}Orders - {{ customer.name }}{% endblock %}
+
+{% block content %}
+    {% if products %}
+        <h1>Сustomer {{ customer.name }} ordered next products for the last {{ last_days }} days</h1>
+        <table>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Order Date</th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.0 }}</td>
+                <td>{{ product.1 }}</td>
+                <td>{{ product.2 }}</td>
+            </tr>
+            {% endfor %}
+        </table>        
+    {% else %}
+        <h1>Сustomer {{ customer.name }} has no orders for the last {{ last_days }} days</h1>
+    {% endif %}
+{% endblock %}
